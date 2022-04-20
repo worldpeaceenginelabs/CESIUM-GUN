@@ -8,15 +8,16 @@
 </p>
 <br><br><br>
 
-# COMMUNITY CHALLENGE
-
-If you have sparetime to help coding the six pinned repositories (there are issues distributed) on https://github.com/worldpeaceenginelabs/ that would be lovely.
-
 # NEED HELP?
 ## Are you a user? Missing a feature or found a bug? Give us a notice in the issues section above!
 
 # !HELP WANTED!
 ## Are you a developer? Do you have some spare time? Feel free to solve a job in the issues section above!
+<br><br><br>
+
+# COMMUNITY CHALLENGE
+
+If you have sparetime to help coding the six pinned repositories (there are issues distributed) on https://github.com/worldpeaceenginelabs/ that would be lovely.
 <br><br><br>
 
 # IN ACTIVE DEVELOPMENT
