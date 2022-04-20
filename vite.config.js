@@ -7,5 +7,5 @@
 // };
 
 export default {
-  base: 'localhost'
+  base: 'https://cloud-atlas.app'
 }
