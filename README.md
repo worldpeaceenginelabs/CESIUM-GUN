@@ -52,7 +52,7 @@ Development Kanban: https://github.com/users/worldpeaceenginelabs/projects/6
 ## - Progressive Web App
 A !website! which runs like a full installed application on any browser ergo any device, can be installed like an app, and is able to get uploaded to all three stores.
 
-And all from the same codebase which is HTML, CSS, Javascript(typescript), React and Material-UI
+And all from the same Svelte codebase which is HTML, CSS, Javascript(typescript)
 <br>
 
 ## - Cesium Globe
