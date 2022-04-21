@@ -1,3 +1,6 @@
+<div id="cesiumContainer">
+</div>
+
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import * as Cesium from 'cesium';
@@ -17,6 +20,3 @@
 	});
 	
 </script>
-
-<div id="cesiumContainer">
-</div>
