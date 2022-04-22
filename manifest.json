@@ -1,5 +1,5 @@
 {
-    "background_color": "none",
+    "background_color": "#000000",
     "description": "TIME TO CONNECT THE DOTS",
     "dir": "ltr",
     "display": "standalone",
@@ -8,7 +8,7 @@
     "scope": "/",
     "short_name": "Cloud Atlas",
     "start_url": "/",
-    "theme_color": "none",
+    "theme_color": "#000000",
     "categories": [],
     "screenshots": [],
     "shortcuts": [],
