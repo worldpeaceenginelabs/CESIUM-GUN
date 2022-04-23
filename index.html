@@ -9,31 +9,37 @@
     <link rel="icon" href="/favicon.png" />
 
     <!-- manifest.json to activate PWA-->
+
     <link rel="manifest" href="/manifest.json"/>
 
     <!-- needed for cesium  -->
+
     <link href="/build/Widgets/widgets.css" rel="stylesheet" />
 
   </head>
   
   <body>
 <!-- root element-->
+
     <div id="app"></div>
 
 <!-- load main.ts -->
+
     <script type="module" src="/src/main.ts"></script>
 
     <!-- load serviceworker (offline strategy) and activate browser native "install" option-->
+    
     <script>if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./serviceworker.js');
     }</script>
 
 <!-- needed for cesium  -->
+
     <script type='text/javascript'>
     if (typeof window !== "undefined"){
 		// browser code
 	}
     window.CESIUM_BASE_URL = '/build/';</script>
-    
+
   </body>
 </html>
