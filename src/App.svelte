@@ -1,13 +1,18 @@
 <script lang="ts">
   import Cesium from "./Cesium.svelte";
+  import Text from "./Text.svelte";
 </script>
 
-<div>
 
-  <h1>Hello Typescript!</h1>
+
+<main>
 <Cesium></Cesium>
-
+<div>
+<Text></Text>
 </div>
+</main>
+
+
 
 <style>
 

@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Svelte + TS + Vite App</title>
     
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Cloud Atlas" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     
     <link rel="icon" href="/favicon.png" />
+
+    <!-- SEO -->
+
+<meta name='robots' content='max-image-preview:large' />
+<meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1" />
+<meta name="description" content="We are building the world&#8217;s first Virtual Online Encyclopedia, but of a very special kind&#8230;" />
+<meta property="og:image" content="https://worldpeaceengine.org/wp-content/uploads/2021/01/globeslide.png" />
+<meta property="og:image:width" content="2500" />
+<meta property="og:image:height" content="1153" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cloud.Atlas" />
+<meta property="og:description" content="We are building the world&#8217;s first Virtual Online Encyclopedia, but of a very special kind&#8230;" />
+<meta property="og:url" content="https://cloud-atlas.org/" />
+<meta property="og:site_name" content="Cloud.Atlas" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cloud.Atlas" />
+<meta name="twitter:description" content="We are building the world&#8217;s first Virtual Online Encyclopedia, but of a very special kind&#8230;" />
+<meta name="twitter:image" content="https://worldpeaceengine.org/wp-content/uploads/2021/01/globeslide.png" />
+<meta name="twitter:image:width" content="2500" />
+<meta name="twitter:image:height" content="1153" />
+<link rel="canonical" href="https://cloud-atlas.org/" />
 
     <!-- manifest.json to activate PWA-->
 
@@ -18,7 +46,7 @@
 
   </head>
   
-  <body>
+  <body style="overflow: hidden;">
 <!-- root element-->
 
     <div id="app"></div>
@@ -27,19 +55,16 @@
 
     <script type="module" src="/src/main.ts"></script>
 
-    <!-- load serviceworker (offline strategy) and activate browser native "install" option-->
-    
-    <script>if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./serviceworker.js');
-    }</script>
-
 <!-- needed for cesium  -->
 
     <script type='text/javascript'>
-    if (typeof window !== "undefined"){
-		// browser code
-	}
     window.CESIUM_BASE_URL = '/build/';</script>
+
+<!-- load serviceworker (offline strategy) and activate browser native "install" option-->
+    
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./serviceworker.js');
+}</script>
 
   </body>
 </html>
