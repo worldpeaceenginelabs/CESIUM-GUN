@@ -7,7 +7,6 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "target": "es2017",
-    "module": "es2017",
     "useDefineForClassFields": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
