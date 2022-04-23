@@ -29,6 +29,11 @@
     }</script>
 
 <!-- needed for cesium  -->
-    <script type='text/javascript'>window.CESIUM_BASE_URL = '/build/';</script>
+    <script type='text/javascript'>
+    if (typeof window !== "undefined"){
+		// browser code
+	}
+    window.CESIUM_BASE_URL = '/build/';</script>
+    
   </body>
 </html>
