@@ -7,9 +7,7 @@
 
 <main>
 <Cesium></Cesium>
-<div>
 <Text></Text>
-</div>
 </main>
 
 

@@ -13,11 +13,24 @@
 	// cesium access token
 
 	Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNTY0ZjMxYy1hZTdjLTRiMzQtYTc4Yi02NWQ5MzU4MWUxMjgiLCJpZCI6NDcwNzcsImlhdCI6MTYxNjg2MzYxOX0.V-4tUKhYM_XHdchqDu3MAAJPezusOzxMeimdYzCXd94';
-	
+
 	// cesium viewer
 	let viewer: Viewer;
 	onMount(async () => {
-		viewer = new Viewer('cesiumContainer');
+		viewer = new Viewer('cesiumContainer', {
+    "animation": false,
+    "baseLayerPicker": true,
+    "fullscreenButton": false,
+    "vrButton": false,
+    "geocoder": true,
+    "homeButton": true,
+    "infoBox": false,
+    "sceneModePicker": true,
+    "selectionIndicator": false,
+    "timeline": false,
+    "navigationHelpButton": false
+			
+		});
 	});
 	
 
@@ -34,9 +47,9 @@
 <style>
 
 main {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+	position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
 </style>
