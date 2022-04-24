@@ -98,3 +98,16 @@ Decentralization/P2P - [Decentralize](https://github.com/draeder/decentralize)
 
 # Why PWA? Deep insight into the realm of PWA - The future of the internet and apps
 Progressive Web Apps - PWA Roadshow: https://youtu.be/z2JgN6Ae-Bo
+
+# Repository
+
+## Installation
+npm install
+
+## Development
+npm run dev
+
+## Build
+npm run build
+
+then copy the content of the folder "dist" to Github and let Cloudflare Pages serve it via CDN.
