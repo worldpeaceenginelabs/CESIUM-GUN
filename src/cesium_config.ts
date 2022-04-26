@@ -1,4 +1,4 @@
-// code snippet from the old react baced repository. not integrated yet
+// code snippet from the old react baced repository. not integrated yet. just copied here
 
 import jsonConfig from '../app.config.json';
 
