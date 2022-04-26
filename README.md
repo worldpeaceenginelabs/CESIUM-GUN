@@ -31,7 +31,7 @@ If you have sparetime to help coding the six pinned repositories (there are issu
 - A social network for good deeds in every area from private to private or private to business or vice versa and around. The more users the social network has, the greater the improvement rate.
 
 #### MISSION-TV
-- An interactive P2P TV Channel, showing people become famous with doing good deeds. The more users watching, the better the streaming quality.
+- An interactive P2P TV Channel, become famous with doing good deeds, watch others doing good. The more users watching, the better the streaming quality.
 #### P2P-PWA-JAMStack-Starter-Kit-with-Cesium
 - True P2P back-end for your next startup business idea, up and running in 60min at no cost. The more users your app has, the better the network quality.
 #### MAPTILE DSERVER
