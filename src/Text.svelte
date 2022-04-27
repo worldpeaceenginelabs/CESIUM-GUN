@@ -11,7 +11,7 @@
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           position: absolute;
-          top: 30px;
+          top: 60px;
           left: 30px;
           color: white;
           }

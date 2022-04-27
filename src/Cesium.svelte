@@ -1,10 +1,13 @@
 <script lang="ts">
+
 	import { onMount } from 'svelte';
 	import * as Cesium from 'cesium';
-	import { Viewer } from 'cesium';
+	import { Viewer, Cartesian3 } from 'cesium';
 	import '../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
+  
+  import { addUserLocationInteraction } from './cesium_lib/addUserLocationInteraction'
 	
-	// avoid "window not declared"
+  // avoid "window not declared"
 
 	if (typeof window !== "undefined"){
 		// browser code
@@ -13,10 +16,71 @@
 	// cesium access token
 
 	Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNTY0ZjMxYy1hZTdjLTRiMzQtYTc4Yi02NWQ5MzU4MWUxMjgiLCJpZCI6NDcwNzcsImlhdCI6MTYxNjg2MzYxOX0.V-4tUKhYM_XHdchqDu3MAAJPezusOzxMeimdYzCXd94';
+  
+  // Get user location
+
+  const getLocationFromNavigator = (): Promise<GeolocationPosition> => {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          resolve(position);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    } else {
+      reject(new Error('Geolocation is not supported by this browser.'));
+    }
+  });
+};
+
+let userLocationCartesian: Cartesian3 | null;
+const userLocationPointId = 'user-location';
+
+
+
+
 
 	
 	// cesium viewer
 	let viewer: Viewer;
+
+  onMount(async (): Promise<void> => {
+let userLocation: GeolocationPosition | null = null;
+
+try {
+userLocation = await getLocationFromNavigator();
+}
+
+catch (error) {  
+  // Ignore user decline
+}
+
+
+if (userLocation !== null) {
+                userLocationCartesian = Cartesian3.fromDegrees(
+                    userLocation.coords.longitude,
+                    userLocation.coords.latitude,
+                )
+                
+                addUserLocationInteraction(
+                    viewer,
+                    userLocation,
+                    userLocationCartesian,
+                    userLocationPointId
+                )
+            }
+});
+
+
+
+
+
+  
+
+
 	onMount(async () => {
 		viewer = new Viewer('cesiumContainer', {
     "animation": false,
@@ -33,8 +97,6 @@
 			
 		});
 	});
-	
-
 
 </script>
 

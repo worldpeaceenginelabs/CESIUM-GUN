@@ -1,3 +1,5 @@
+<script lang="ts">
+
 import {
     Cartesian3,
     ClockRange,
@@ -43,6 +45,6 @@ import {
       },
     });
   };
-  
-  export default createPulsatingPoint;
+
+</script>
   

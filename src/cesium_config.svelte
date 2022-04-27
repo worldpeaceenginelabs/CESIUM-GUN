@@ -1,12 +1,6 @@
 // code snippet from the old react baced repository. not integrated yet. just copied here
 
-import jsonConfig from '../app.config.json';
-
-interface IGlobalAppConfiguration {
-  GOOGLE_CLIENT_ID: string;
-  GOOGLE_CLIENT_SECRET: string;
-  FACEBOOK_APP_ID: string;
-  APPLE_APP_ID: string;
+<script lang="ts">
 
   app: {
     // https://cesium.com/learn/cesiumjs/ref-doc/Viewer.html#.ConstructorOptions
@@ -50,15 +44,6 @@ interface IGlobalAppConfiguration {
   };
 }
 
-const getConfig = (): IGlobalAppConfiguration => {
-  return {
-    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID as string,
-    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET as string,
-    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID as string,
-    APPLE_APP_ID: process.env.APPLE_APP_ID as string,
 
-    app: jsonConfig,
-  };
-};
 
-export default getConfig();
+</script>
