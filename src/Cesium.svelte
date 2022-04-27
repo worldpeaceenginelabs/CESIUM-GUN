@@ -4,7 +4,7 @@
 	import * as Cesium from 'cesium';
 	import { Viewer, Cartesian3 } from 'cesium';
 	import '../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
-  
+
   import { addUserLocationInteraction } from './cesium_lib/addUserLocationInteraction'
 	
   // avoid "window not declared"
@@ -13,11 +13,34 @@
 		// browser code
 	}
 	
+
+  // cesium viewer
+  let viewer: Viewer;
+
+  // cesium basic settings
+
+  onMount(async () => {
+		viewer = new Viewer('cesiumContainer', {
+    "animation": false,
+    "baseLayerPicker": true,
+    "fullscreenButton": false,
+    "vrButton": false,
+    "geocoder": true,
+    "homeButton": true,
+    "infoBox": false,
+    "sceneModePicker": true,
+    "selectionIndicator": false,
+    "timeline": false,
+    "navigationHelpButton": false
+			
+		});
+	});
+
 	// cesium access token
 
 	Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNTY0ZjMxYy1hZTdjLTRiMzQtYTc4Yi02NWQ5MzU4MWUxMjgiLCJpZCI6NDcwNzcsImlhdCI6MTYxNjg2MzYxOX0.V-4tUKhYM_XHdchqDu3MAAJPezusOzxMeimdYzCXd94';
   
-  // Get user location
+  // Get user location from browser api
 
   const getLocationFromNavigator = (): Promise<GeolocationPosition> => {
   return new Promise((resolve, reject) => {
@@ -36,16 +59,13 @@
   });
 };
 
+// user location
+
 let userLocationCartesian: Cartesian3 | null;
 const userLocationPointId = 'user-location';
 
 
-
-
-
-	
-	// cesium viewer
-	let viewer: Viewer;
+// user location
 
   onMount(async (): Promise<void> => {
 let userLocation: GeolocationPosition | null = null;
@@ -58,6 +78,7 @@ catch (error) {
   // Ignore user decline
 }
 
+// user location
 
 if (userLocation !== null) {
                 userLocationCartesian = Cartesian3.fromDegrees(
@@ -73,30 +94,6 @@ if (userLocation !== null) {
                 )
             }
 });
-
-
-
-
-
-  
-
-
-	onMount(async () => {
-		viewer = new Viewer('cesiumContainer', {
-    "animation": false,
-    "baseLayerPicker": true,
-    "fullscreenButton": false,
-    "vrButton": false,
-    "geocoder": true,
-    "homeButton": true,
-    "infoBox": false,
-    "sceneModePicker": true,
-    "selectionIndicator": false,
-    "timeline": false,
-    "navigationHelpButton": false
-			
-		});
-	});
 
 </script>
 
