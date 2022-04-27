@@ -2,7 +2,7 @@
 
 	import { onMount } from 'svelte';
 	import * as Cesium from 'cesium';
-	import { Viewer, Cartesian3 } from 'cesium';
+	import { Viewer, Cartesian2, Cartesian3 } from 'cesium';
 	import '../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
 
   import { addUserLocationInteraction } from './cesium_lib/addUserLocationInteraction'
@@ -94,6 +94,87 @@ if (userLocation !== null) {
                 )
             }
 });
+
+
+// Globe Auto Rotate
+
+const addGlobeAutoRotation = (viewer: Viewer, rotationSpeed: number): void => {
+  viewer.canvas.addEventListener('mousemove', (event: MouseEvent) => {
+    const mousePosition = new Cartesian2(event.x, event.y);
+
+    // Get the position of the globe below the mouse position
+    // Will be undefined if the globe isn't below the cursor
+    const cartesian = viewer.camera.pickEllipsoid(
+      mousePosition,
+      viewer.scene.globe.ellipsoid
+    );
+
+    if (!cartesian) {
+      startRotation(viewer, rotationSpeed);
+      return;
+    }
+
+    stopRotation();
+  });
+
+  startRotation(viewer, rotationSpeed);
+};
+
+
+// Globe Auto Rotate
+
+let rotationPaused = false;
+let lastRotationTime: number | null = null;
+let eventHandler: (() => void) | null = null;
+
+const doRotate = (viewer: Viewer, rotationSpeed: number) => {
+  if (rotationPaused) {
+    return;
+  }
+
+  const now = Date.now();
+  // Positiv: rotates from left to right
+  const spinRate = rotationSpeed;
+  const delta = (now - (lastRotationTime ?? now)) / 1000;
+
+  lastRotationTime = now;
+
+  viewer.scene.camera.rotate(Cartesian3.UNIT_Z, spinRate * delta);
+};
+
+const startRotation = (viewer: Viewer, rotationSpeed = 0.5) => {
+  // Already added, just continue the loop
+  if (eventHandler !== null) {
+    if (rotationPaused) {
+      // Updating this prevents a large rotation after a longer pause
+      lastRotationTime = Date.now();
+      rotationPaused = false;
+    }
+
+    return;
+  }
+
+  lastRotationTime = Date.now();
+  eventHandler = () => doRotate(viewer, rotationSpeed);
+
+  viewer.scene.postRender.addEventListener(eventHandler);
+};
+
+const stopRotation = () => {
+  rotationPaused = true;
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
