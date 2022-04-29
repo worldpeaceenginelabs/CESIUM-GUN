@@ -3,20 +3,22 @@ import { onMount } from "svelte";
 
   import Cesium from "./Cesium.svelte";
   import Modal from "./Modal.svelte";
-  import Text from "./Text.svelte";
-
-
-
+  import {fade} from 'svelte/transition'
  
+  let isOpenModal = false;
 
- 
+    function openModal() {
+        isOpenModal = true;
+    }
+
+  
+
 </script>
 
 
 
 <main>
 <Cesium/>
-<Text/>
 <Modal/>
 </main>
 
