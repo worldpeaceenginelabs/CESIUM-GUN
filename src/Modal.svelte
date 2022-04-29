@@ -1,13 +1,15 @@
 <script lang="ts">
-
+import {fade} from 'svelte/transition'
 </script>
 
 <div id="background"></div>
 <div id="modal">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/FKqOLmuIEFw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>
-    <strong><a href="https://cloud-atlas.org" target="_blank">
-        Want to know more? Enter https://cloud-atlas.org</a>
+<p><strong>
+    “You never change things by fighting against the existing reality.<br> To change something, build a new model that makes the old model obsolete.” <i>Buckminster Fuller</i><br><br>
+   COMING SOON<br><br>
+    <a href="https://cloud-atlas.org" target="_blank">
+        Enter Projects Page</a>
     </strong>
 </p>
 
@@ -42,5 +44,5 @@
     }
 
     a {text-decoration: none;
-    color: white;}
+    color: grey;}
 </style>
