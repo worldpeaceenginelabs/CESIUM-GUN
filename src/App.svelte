@@ -1,13 +1,23 @@
 <script lang="ts">
+import { onMount } from "svelte";
+
   import Cesium from "./Cesium.svelte";
+  import Modal from "./Modal.svelte";
   import Text from "./Text.svelte";
+
+
+
+ 
+
+ 
 </script>
 
 
 
 <main>
-<Cesium></Cesium>
-<Text></Text>
+<Cesium/>
+<Text/>
+<Modal/>
 </main>
 
 
