@@ -36,6 +36,8 @@
     });
   };
   
+
+
   // avoid "window not declared"
 
 	if (typeof window !== "undefined"){
@@ -53,17 +55,20 @@
 
   onMount(async () => { 
 		viewer = new Viewer('cesiumContainer', {
-    "animation": false,
-    "baseLayerPicker": true,
+    "animation": true,
+    "baseLayerPicker": false,
     "fullscreenButton": false,
     "vrButton": false,
-    "geocoder": true,
+    "geocoder": false,
     "homeButton": true,
     "infoBox": false,
-    "sceneModePicker": true,
+    "sceneModePicker": false,
     "selectionIndicator": false,
     "timeline": false,
-    "navigationHelpButton": false
+    "navigationHelpButton": false,
+    "shouldAnimate": true
+
+    
 
     //Use OpenStreetMaps
     // imageryProvider : new Cesium.OpenStreetMapImageryProvider({
@@ -73,10 +78,14 @@
 		});
 	});
 
+
+
 	// cesium access token
 
 	Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNTY0ZjMxYy1hZTdjLTRiMzQtYTc4Yi02NWQ5MzU4MWUxMjgiLCJpZCI6NDcwNzcsImlhdCI6MTYxNjg2MzYxOX0.V-4tUKhYM_XHdchqDu3MAAJPezusOzxMeimdYzCXd94';
   
+
+
   // user location
 let userLocationCartesian: Cartesian3 | null;
 const userLocationPointId = 'user-location';
@@ -130,14 +139,14 @@ const addUserLocation = (
         userLocation.coords.latitude,
         0
       ),
-      Color.GREEN
+      Color.LIME
     )
   );
 };
 
 // make user location dot pulsate
 
-let createPulsatingPoint = (
+const createPulsatingPoint = (
     viewer: Viewer,
     pointId: string,
     userDestination: Cartesian3,
@@ -175,14 +184,10 @@ let createPulsatingPoint = (
 </script>
 
 
-
 <main id="cesiumContainer">
+
 </main>
 
-<div class="ring-container">
-  <div class="ringring"></div>
-  <div class="circle"></div>
-</div> 
 
 
 <style>
@@ -192,37 +197,5 @@ main {
     width: 100%;
     height: 100%;
   }
-
-.ring-container {
-    position: relative;
-}
-  
-.circle {
-    width: 15px;
-    height: 15px;
-    background-color: #62bd19;
-    border-radius: 50%;
-    position: absolute;
-    top: 23px;
-    left: 23px;
-}
-
-.ringring {
-    border: 3px solid #62bd19;
-    border-radius: 30px;
-    height: 25px;
-    width: 25px;
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    animation: pulsate 1s ease-out;
-    animation-iteration-count: infinite; 
-    opacity: 0.0
-}
-@keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}
 
 </style>
