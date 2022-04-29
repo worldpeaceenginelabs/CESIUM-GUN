@@ -60,7 +60,7 @@
     "fullscreenButton": false,
     "vrButton": false,
     "geocoder": false,
-    "homeButton": true,
+    "homeButton": false,
     "infoBox": false,
     "sceneModePicker": false,
     "selectionIndicator": false,
@@ -143,7 +143,7 @@ const stopRotation = () => {
   rotationPaused = true;
 };
 
-startRotation(viewer, -1);
+startRotation(viewer, -0.05);
 
 // fly to user location on startup
 
