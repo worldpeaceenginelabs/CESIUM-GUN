@@ -44,29 +44,27 @@
 
     <link href="/build/Widgets/widgets.css" rel="stylesheet" />
 
+    <!-- load serviceworker (offline strategy) and activate browser native "install" option-->
+    
+    <script async>if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./serviceworker.js');
+      }</script>
+
+    <!-- needed for cesium  -->
+
+    <script async type='text/javascript'>
+    window.CESIUM_BASE_URL = '/build/';</script>
+
+    <!-- load main.ts -->
+    <script async type="module" src="/src/main.ts"></script>
+
   </head>
   
   <body style="overflow: hidden; margin:0px;">
+
 <!-- root element-->
 
     <div id="app"></div>
-
-<!-- load main.ts -->
-
-    <script type="module" src="/src/main.ts"></script>
-
-<!-- async needed here? -->
-
-<!-- needed for cesium  -->
-
-    <script type='text/javascript'>
-    window.CESIUM_BASE_URL = '/build/';</script>
-
-<!-- load serviceworker (offline strategy) and activate browser native "install" option-->
-    
-<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./serviceworker.js');
-}</script>
 
   </body>
 </html>
