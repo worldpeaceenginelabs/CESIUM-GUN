@@ -55,7 +55,7 @@
 
   onMount(async () => { 
 		viewer = new Viewer('cesiumContainer', {
-    "animation": true,
+    "animation": false,
     "baseLayerPicker": false,
     "fullscreenButton": false,
     "vrButton": false,
