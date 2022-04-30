@@ -147,10 +147,10 @@ startRotation(viewer, -0.05);
 
 // fly to user location on startup
 
-// viewer.camera.flyTo({
-//    destination: Cesium.Cartesian3.fromDegrees(userLocation.coords.longitude,
-//                    userLocation.coords.latitude, 10000000.0),
-// });
+viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(userLocation.coords.longitude,
+            userLocation.coords.latitude, 10000000.0),
+ });
 
 
 // user location
