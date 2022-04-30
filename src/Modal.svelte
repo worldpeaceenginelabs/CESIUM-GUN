@@ -17,7 +17,7 @@
    
         <button>
                 
-                <a href="https://cloud-atlas.org" target="_blank">
+                <a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank">
                     LEARN MORE</a>
 
         </button>
