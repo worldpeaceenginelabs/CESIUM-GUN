@@ -1,12 +1,13 @@
 <script lang="ts">
+
 </script>
 
 
-<div id="wrapper" >
+<div id="wrapper">
         
     <div id="modal">
         
-        <iframe src="https://www.youtube.com/embed/FKqOLmuIEFw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/FKqOLmuIEFw?controls=0&showinfo=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
         <h4>
         “You never change things by fighting against the existing reality.<br><br>
@@ -26,8 +27,6 @@
     </div>
 
 </div>
-
-
 
 <style>    
 
@@ -52,8 +51,7 @@
     }
 
     iframe {
-        max-height: 300px;
-        min-height: 200px;
+        height: 330px;
         width: 100%;       
     }
 
@@ -72,7 +70,7 @@
     }
 
     button, button::after {
-  width: 95%;
+  width: 90%;
   font-size: 25px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

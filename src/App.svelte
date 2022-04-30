@@ -5,12 +5,15 @@
   import Modal from "./Modal.svelte"
   import {fade} from 'svelte/transition'
   
-  // 
-  let modalVisibility = false;
-
-    function changeModalVisibility() {
-        modalVisibility = true;
-    }
+  // initialise modal state and content
+	let showModal = false;
+	let modalContent;
+	
+	// pass in component as parameter and toggle modal state
+	function toggleModal(component) {
+		modalContent = component;
+		showModal = !showModal;
+	}
 
 </script>
 
@@ -18,20 +21,20 @@
 
 
 
-<div on:click={changeModalVisibility}>
+<div on:click={() => (toggleModal(Modal))}>
 
   <Cesium/>
   <Text/>
     
-    {#if modalVisibility}
-      <div transition:fade>
-      <Modal/>
-      </div>  
-    {/if}
+  {#if showModal}
+  <div transition:fade>
+  <Modal on:click={toggleModal}/>
+  </div>
+  {/if}
 
     </div>
 
-
+    
 
 <style>
  
