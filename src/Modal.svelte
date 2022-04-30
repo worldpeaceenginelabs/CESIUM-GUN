@@ -13,8 +13,6 @@
         To change something, build a new model that makes the old model obsolete.”<br><br>
         <i>Buckminster Fuller</i>
         </h4>
-
-        <h2> COMING SOON<br></h2>
    
         <button>
                 
@@ -45,16 +43,17 @@
 
     #modal {                        
         background: black;                
-		width: fit-content;
+		    width: fit-content;
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        margin: 2%;  
+        margin: 5%;  
     }
 
     iframe {
-        height: 300px;
+        max-height: 300px;
+        min-height: 200px;
         width: 100%;       
     }
 
@@ -68,17 +67,7 @@
         padding: 1%;        
     }
 
-    h2 {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: white;
-        padding: 1%;        
-    }
-
-    a {
+    a { color: black;
         text-decoration: none;  
     }
 
@@ -86,12 +75,11 @@
   width: 95%;
   font-size: 25px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(45deg, transparent 5%, lightgrey 5%);
   border: 0;
-  color: #fff;
   letter-spacing: 3px;
   line-height: 88px;
   box-shadow: 6px 0px 0px darkslategrey;
@@ -107,7 +95,7 @@ button::after {
   --slice-4: inset(40% -6px 43% 0);
   --slice-5: inset(80% -6px 5% 0);
   
-  content: 'AVAILABLE NOW';
+  content: 'LEARN MORE';
   display: block;
   position: absolute;
   top: 0;
@@ -120,7 +108,7 @@ button::after {
 }
 
 button:hover::after {
-  animation: 1s glitch;
+  animation: 2s glitch;
   animation-timing-function: steps(2, end);
 }
 
