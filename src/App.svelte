@@ -1,7 +1,8 @@
 <script lang="ts">
   
-  import Cesium from "./Cesium.svelte";
-  import Modal from "./Modal.svelte";
+  import Cesium from "./Cesium.svelte"
+  import Text from "./Text.svelte"
+  import Modal from "./Modal.svelte"
   import {fade} from 'svelte/transition'
   
   // 
@@ -20,6 +21,7 @@
 <div on:click={changeModalVisibility}>
 
   <Cesium/>
+  <Text/>
     
     {#if modalVisibility}
       <div transition:fade>
