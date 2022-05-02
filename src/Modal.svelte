@@ -12,12 +12,12 @@
         <h4>
         “You never change things by fighting against the existing reality.<br><br>
         To change something, build a new model that makes the old model obsolete.”<br><br>
-        <i>Buckminster Fuller</i>
+        <i>Buckminster Fuller</i><br><a href="https://www.bfi.org/about-fuller/big-ideas/world-game/" target="_blank" class="class1">(Founder of the World Peace Game)</a>
         </h4>
    
         <button>
                 
-                <a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank">
+                <a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank" class="class2">
                     LEARN MORE</a>
 
         </button>
@@ -65,9 +65,16 @@
         padding: 1%;        
     }
 
-    a { color: black;
-        text-decoration: none;  
+    a.class1 { color: grey;
+        text-decoration: none;
+    
     }
+
+    a.class2 { color: black;
+        text-decoration: none;
+    }
+
+
 
     button, button::after {
   width: 90%;
