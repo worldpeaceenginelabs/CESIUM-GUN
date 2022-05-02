@@ -1,5 +1,16 @@
 <script lang="ts">
+import ModalSwitch from './ModalSwitch.svelte'
+	import WorldGameText from './WorldGameText.svelte'
 
+	// initialise modal state and content
+	let showModal = false;
+	let modalContent;
+	
+	// pass in component as parameter and toggle modal state
+	function toggleModal(component) {
+		modalContent = component;
+		showModal = !showModal;
+	}
 </script>
 
 
@@ -12,12 +23,12 @@
         <h4>
         “You never change things by fighting against the existing reality.<br><br>
         To change something, build a new model that makes the old model obsolete.”<br><br>
-        <i>Buckminster Fuller</i><br><a href="https://www.bfi.org/about-fuller/big-ideas/world-game/" target="_blank" class="class1">(Founder of the World Peace Game)</a>
+        <i>Buckminster Fuller</i><br>
         </h4>
-   
+        <h4 on:click={() => (toggleModal(WorldGameText))}>(Founder of the World Peace Game)</h4>
         <button>
                 
-                <a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank" class="class2">
+                <a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank">
                     LEARN MORE</a>
 
         </button>
@@ -27,6 +38,10 @@
     </div>
 
 </div>
+
+{#if showModal}
+	<ModalSwitch on:click={toggleModal} {modalContent} />
+{/if}
 
 <style>    
 
@@ -65,16 +80,9 @@
         padding: 1%;        
     }
 
-    a.class1 { color: grey;
-        text-decoration: none;
-    
-    }
-
-    a.class2 { color: black;
+    a { color: black;
         text-decoration: none;
     }
-
-
 
     button, button::after {
   width: 90%;
