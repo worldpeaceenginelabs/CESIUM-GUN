@@ -1,5 +1,5 @@
 <script lang="ts">
-import Modal from './Modal.svelte'
+import Modal from './Modalsecond.svelte'
 	import WorldGameText from './WorldGameText.svelte'
 
 	// initialise modal state and content
@@ -14,26 +14,22 @@ import Modal from './Modal.svelte'
 </script>
 
 
-<div id="wrapper">
+<div>
         
-    <div id="modal">
+    <div>
         
         <iframe src="https://www.youtube.com/embed/FKqOLmuIEFw?controls=0&showinfo=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
+        <div class="content">
         <h4>
         “You never change things by fighting against the existing reality.<br><br>
         To change something, build a new model that makes the old model obsolete.”<br><br>
-        <i>Buckminster Fuller</i><br>
-        </h4>
-        <h4 on:click={() => (toggleModal(WorldGameText))}>(Founder of the World Peace Game)</h4>
-        <button>
-                
-                <a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank">
-                    LEARN MORE</a>
+        <i>Buckminster Fuller</i></h4>
 
-        </button>
+        <h5 on:click={() => (toggleModal(WorldGameText))} style="color: grey;">Founder of the World Peace Game (Click for description)</h5>
 
-        <br>
+        <button><a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank">LEARN MORE</a></button>
+        </div>
 
     </div>
 
@@ -43,34 +39,14 @@ import Modal from './Modal.svelte'
 	<Modal on:click={toggleModal} {modalContent} />
 {/if}
 
-<style>    
-
-    #wrapper {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;  
-    }
-
-    #modal {                        
-        background: black;                
-		    width: fit-content;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        margin: 5%;  
-    }
-
+<style>
+  
     iframe {
         height: 330px;
         width: 100%;       
     }
 
-    h4 {
+    .content {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
