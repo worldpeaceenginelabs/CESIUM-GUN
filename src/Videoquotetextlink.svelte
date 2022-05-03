@@ -24,9 +24,7 @@ import Modal from './Modalsecond.svelte'
         <h4>
         “You never change things by fighting against the existing reality.<br><br>
         To change something, build a new model that makes the old model obsolete.”<br><br>
-        <i>Buckminster Fuller</i></h4>
-
-        <h5 on:click={() => (toggleModal(WorldGameText))} style="color: grey;">Founder of the World Peace Game (Click for description)</h5>
+        <i on:click={() => (toggleModal(WorldGameText))} style="color: grey;">Buckminster Fuller <i class="fa-solid fa-circle-info"></i></i></h4>
 
         <button><a href="https://worldpeaceenginelabs.org/cloud-dot-atlas/" target="_blank">LEARN MORE</a></button>
         </div>
