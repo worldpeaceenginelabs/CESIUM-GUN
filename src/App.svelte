@@ -1,11 +1,12 @@
 <script lang="ts">
   
   import Cesium from "./Cesium.svelte"
-  import Text from "./Text.svelte"
+  import ComingSoon from "./ComingSoon.svelte"
   import Modal from "./Modal.svelte"
+  import VideoQuoteLink from "./VideoQuoteLink.svelte";
   import {fade} from 'svelte/transition'
   
-  // initialise modal state and content
+	// initialise modal state and content
 	let showModal = false;
 	let modalContent;
 	
@@ -17,25 +18,17 @@
 
 </script>
 
-
-
-
-
-<div on:click={() => (toggleModal(Modal))}>
-
+<div on:click={() => (toggleModal(VideoQuoteLink))}>
   <Cesium/>
-  <Text/>
-    
+  <ComingSoon/>
+</div>
+
   {#if showModal}
   <div transition:fade>
-  <Modal on:click={toggleModal}/>
+  <Modal on:click={toggleModal} {modalContent}/>
   </div>
   {/if}
 
-    </div>
-
-    
-
 <style>
- 
+
 </style>

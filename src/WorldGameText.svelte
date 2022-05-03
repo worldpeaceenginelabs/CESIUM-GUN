@@ -8,3 +8,7 @@ The playing field was not to be so much as leveled, or expanded, but the good �
 
 “Make the world work, for 100% of humanity, in the shortest possible time, through spontaneous cooperation, without ecological offense or the disadvantage of anyone.”
 </div>
+
+<style>
+    div {background: white;}
+</style>
