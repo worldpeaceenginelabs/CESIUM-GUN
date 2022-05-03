@@ -2,7 +2,7 @@
   
   import Cesium from "./Cesium.svelte"
   import ComingSoon from "./Comingsoontext.svelte"
-  import Modal from "./Modal.svelte"
+  import Modal from "./Modalmain.svelte"
   import Videoquotetextlink from "./Videoquotetextlink.svelte";
   import {fade} from 'svelte/transition'
   

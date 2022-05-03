@@ -15,10 +15,13 @@
 		position: fixed;
         height: 100%;
         width: 100%;
-        display: flex;
+        display: block;
         flex-flow: column;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
+        overflow-y: auto;
+        margin-top: 5%;
+         
 	}
 	
 	.content {
@@ -28,6 +31,7 @@
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        margin: 5%;  
+        margin: 5%;
+        
 	}
 </style>
