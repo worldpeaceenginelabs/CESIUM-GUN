@@ -11,7 +11,7 @@
 </div>
 
 <style>
-	.modal {
+	.modal {        
 		position: fixed;
         height: 100%;
         width: 100%;
@@ -19,19 +19,15 @@
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        overflow-y: auto;
-        margin-top: 5%;
-         
+        overflow: hidden;
+        overflow-y: auto;         
 	}
 	
-	.content {
-		background: black;                
-		width: fit-content;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        margin: 5%;
+	.content {        
+		margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 2.5%;
+        margin-bottom: 5%;
         
 	}
 </style>
