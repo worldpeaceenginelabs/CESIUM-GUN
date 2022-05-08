@@ -20,19 +20,20 @@ import {fade} from 'svelte/transition'
 </script>
 
 <!-- Here starts the app-->
-
-<div on:click={() => (toggleModal(Videoquotetextlink))}>
+<!-- on:click={() => (toggleModal(Videoquotetextlink))} -->
+<div >
 
   <Cesium/>
-  <ComingSoon/>
+  <!-- <ComingSoon/> -->
   
 </div>
-
+<!-- 
 {#if showModal}
   <div transition:fade>
   <Modal on:click={toggleModal} {modalContent}/>
   </div>
   {/if}
+-->
 
 
 
