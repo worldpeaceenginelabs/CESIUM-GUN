@@ -79,7 +79,6 @@
 	});
 
 
-
 	// cesium access token
 
 	Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNTY0ZjMxYy1hZTdjLTRiMzQtYTc4Yi02NWQ5MzU4MWUxMjgiLCJpZCI6NDcwNzcsImlhdCI6MTYxNjg2MzYxOX0.V-4tUKhYM_XHdchqDu3MAAJPezusOzxMeimdYzCXd94';
@@ -225,6 +224,18 @@ const createPulsatingPoint = (
       },
     });
   };
+
+
+  onMount(async () => {
+
+let handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+handler.setInputAction(function(result) {
+let worldPosition = viewer.scene.pickPosition(result.position);
+let carto = Cesium.Cartographic.fromCartesian(worldPosition);
+console.log(carto); //Or print the worldPosition for the Cartesian3 coordinate.
+}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+});
 
 </script>
 
