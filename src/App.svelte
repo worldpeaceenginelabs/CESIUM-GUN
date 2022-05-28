@@ -5,6 +5,7 @@ import ComingSoon from "./Comingsoontext.svelte"
 import Modal from "./Modalmain.svelte"
 import Videoquotetextlink from "./Videoquotetextlink.svelte";
 import {fade} from 'svelte/transition'
+import Sdgtopbarcss from "./Sdgtopbarcss.svelte";
 
   
 	// initialise modal state and content
@@ -24,6 +25,7 @@ import {fade} from 'svelte/transition'
 <div >
 
   <Cesium/>
+  <Sdgtopbarcss/>
   <!-- <ComingSoon/> -->
   
 </div>

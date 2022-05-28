@@ -8,6 +8,10 @@
     <div class="innersquare">
     <div class="content">Test</div>
 </div>
+<div class="square">
+    <div class="innersquare">
+    <div class="content">Test</div>
+</div>
 </div>
 
 

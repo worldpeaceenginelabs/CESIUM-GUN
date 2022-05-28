@@ -225,6 +225,7 @@ const createPulsatingPoint = (
     });
   };
 
+// fetch latitude, longitude and height on click. show in console.
 
   onMount(async () => {
 
