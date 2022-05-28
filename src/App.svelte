@@ -21,21 +21,21 @@ import Sdgtopbar from "./Sdgtopbar.svelte";
 </script>
 
 <!-- Here starts the app-->
-
-<div on:click={() => (toggleModal(Videoquotetextlink))}>
+<!-- on:click={() => (toggleModal(Videoquotetextlink))} -->
+<div >
 
   <Cesium/>
   <Sdgtopbar/>
- <ComingSoon/> 
+  <!-- <ComingSoon/> -->
   
 </div>
-
+<!-- 
 {#if showModal}
   <div transition:fade>
   <Modal on:click={toggleModal} {modalContent}/>
   </div>
   {/if}
-
+-->
 
 
 
