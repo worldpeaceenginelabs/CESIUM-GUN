@@ -6,6 +6,7 @@ import Modal from "./Modalmain.svelte"
 import Videoquotetextlink from "./Videoquotetextlink.svelte";
 import {fade} from 'svelte/transition'
 import Sdgtopbar from "./Sdgtopbar.svelte";
+import Publicorprivate from "./Publicorprivate.svelte";
 
   
 	// initialise modal state and content
@@ -22,20 +23,20 @@ import Sdgtopbar from "./Sdgtopbar.svelte";
 
 <!-- Here starts the app-->
 <!--  -->
-<div on:click={() => (toggleModal(Videoquotetextlink))}>
+<div on:click={() => (toggleModal(Publicorprivate))}>
 
   <Cesium/>
   <Sdgtopbar/>
-  <ComingSoon/> 
+  <!-- <ComingSoon/> -->
   
 </div>
- 
+<!-- 
 {#if showModal}
   <div transition:fade>
   <Modal on:click={toggleModal} {modalContent}/>
   </div>
   {/if}
-
+-->
 
 
 
