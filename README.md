@@ -1,4 +1,7 @@
 # CLOUD.ATLAS - The collective computer of the people
+
+[![Join the chat at https://gitter.im/CLOUD-ATLAS-SVELTE/community](https://badges.gitter.im/CLOUD-ATLAS-SVELTE/community.svg)](https://gitter.im/CLOUD-ATLAS-SVELTE/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Lets make collaboration and good deeds sexy as entertainment, to rise the quality of our daily lifes and become our best selfs.
 
 ### Become a member of the "People are awesome" network! https://cloudatlas.club
