@@ -101,7 +101,7 @@ catch (error) {
 
 // Globe Auto Rotation
 
-let rotationPaused = false;
+let rotationPaused = true;
 let lastRotationTime: number | null = null;
 let eventHandler: (() => void) | null = null;
 

@@ -22,11 +22,11 @@ import Publicorprivate from "./Publicorprivate.svelte";
 </script>
 
 <!-- Here starts the app-->
-<!--  -->
-<div on:click={() => (toggleModal(Publicorprivate))}>
+<!--on:click={() => (toggleModal(Publicorprivate))}  -->
+<div>
 
   <Cesium/>
-  <Sdgtopbar/>
+  <!-- <Sdgtopbar/> -->
   <!-- <ComingSoon/> -->
   
 </div>
