@@ -23,20 +23,20 @@ import Publicorprivate from "./Publicorprivate.svelte";
 
 <!-- Here starts the app-->
 <!--  -->
-<div on:click={() => (toggleModal(Publicorprivate))}>
+<div on:click={() => (toggleModal(Videoquotetextlink))}>
 
   <Cesium/>
   <Sdgtopbar/>
-  <!-- <ComingSoon/> -->
+  <ComingSoon/>
   
 </div>
-<!-- 
+
 {#if showModal}
   <div transition:fade>
   <Modal on:click={toggleModal} {modalContent}/>
   </div>
   {/if}
--->
+
 
 
 
