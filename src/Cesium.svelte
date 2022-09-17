@@ -16,6 +16,8 @@
 	import {  } from 'cesium';
 	import '../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
   
+  import Gun from "gun";
+  import DataSource from 'cesium/Source/DataSources/DataSource';
 
 
   // Get user location from browser api
@@ -152,6 +154,7 @@ viewer.camera.flyTo({
  });
 
 
+
 // user location
 if (userLocation !== null) {
                 userLocationCartesian = Cartesian3.fromDegrees(
@@ -224,6 +227,39 @@ const createPulsatingPoint = (
       },
     });
   };
+
+
+
+// Initialize GUN and tell it we will be storing all data under the key 'test'.
+var gun = Gun(['https://gunrelayeurope.herokuapp.com/gun']).get('test')
+
+// Fetch Gun data
+
+gun.on(data => { 
+
+// Mapmarker constructor
+
+Cesium.DataSource.add ({ 
+position: Cartesian3.fromDegrees(
+                        Number(longitude),
+                        Number(latitude)
+                    ),
+                    point: {
+                        pixelSize: 5,
+                        color: Color.RED,
+                        outlineColor: Color.WHITE,
+                        outlineWidth: 2,
+                    }
+
+})
+})
+
+// render datasource to globe
+viewer.dataSources.add(DataSource);
+
+
+
+
 
 // fetch latitude, longitude and height on click. show in console.
 
