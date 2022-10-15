@@ -102,7 +102,7 @@ catch (error) {
 
 // Globe Auto Rotation
 
-let rotationPaused = false;
+let rotationPaused = true;
 let lastRotationTime: number | null = null;
 let eventHandler: (() => void) | null = null;
 
@@ -185,7 +185,7 @@ const addUserLocation = (
         userLocation.coords.latitude,
         0
       ),
-      Color.RED
+      Color.GREEN
     )
   );
 };
@@ -274,10 +274,12 @@ let bluebox = viewer.entities.add({
                                       Number(data.latitude),
                                       0
                                       ),
-			box: {
-				dimensions: new Cartesian3(400000.0, 400000.0, 400000.0),
-				material: Color.GREEN,
-			},
+			point: {
+              pixelSize : 10,
+              color : Cesium.Color.RED,
+              outlineColor : Cesium.Color.GREEN,
+              outlineWidth : 3
+			      },
 
 });
 
