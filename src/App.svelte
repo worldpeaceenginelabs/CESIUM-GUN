@@ -22,12 +22,12 @@ import Publicorprivate from "./Publicorprivate.svelte";
 </script>
 
 <!-- Here starts the app-->
-<!--  -->
-<div on:click={() => (toggleModal(Videoquotetextlink))}>
+<!-- on:click={() => (toggleModal(Videoquotetextlink))}  -->
+<div>
 
   <Cesium/>
   <Sdgtopbar/>
-  <ComingSoon/>
+  <!-- <ComingSoon/> -->
   
 </div>
 
@@ -43,3 +43,4 @@ import Publicorprivate from "./Publicorprivate.svelte";
 <style>
   
  </style>
+

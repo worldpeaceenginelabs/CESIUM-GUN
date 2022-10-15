@@ -16,9 +16,8 @@
 	import {  } from 'cesium';
 	import '../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
   
-  import Gun from "gun";
-  import DataSource from 'cesium/Source/DataSources/DataSource';
-
+  import Gun from 'gun';
+ 
 
   // Get user location from browser api
   const getLocationFromNavigator = (): Promise<GeolocationPosition> => {
@@ -186,7 +185,7 @@ const addUserLocation = (
         userLocation.coords.latitude,
         0
       ),
-      Color.LIME
+      Color.RED
     )
   );
 };
@@ -230,47 +229,48 @@ const createPulsatingPoint = (
 
 
 
+// Start Svelte Lifecycle
+onMount(async () => {
+
 // Initialize GUN and tell it we will be storing all data under the key 'test'.
-var gun = Gun(['https://gunrelayeurope.herokuapp.com/gun']).get('test')
-
-// Fetch Gun data
-
-gun.on(data => { 
-
-// Mapmarker constructor
-
-Cesium.DataSource.add ({ 
-position: Cartesian3.fromDegrees(
-                        Number(longitude),
-                        Number(latitude)
-                    ),
-                    point: {
-                        pixelSize: 5,
-                        color: Color.RED,
-                        outlineColor: Color.WHITE,
-                        outlineWidth: 2,
-                    }
-
-})
-})
-
-// render datasource to globe
-viewer.dataSources.add(DataSource);
-
-
-
+var db = Gun(['http://localhost:8765/gun']).get('test')
 
 
 // fetch latitude, longitude and height on click. show in console.
-
-  onMount(async () => {
-
 let handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 handler.setInputAction(function(result) {
-let worldPosition = viewer.scene.pickPosition(result.position);
-let carto = Cesium.Cartographic.fromCartesian(worldPosition);
-console.log(carto); //Or print the worldPosition for the Cartesian3 coordinate.
-}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+                                        
+                                        let worldPosition = viewer.scene.pickPosition(result.position);
+                                        let carto = Cesium.Cartographic.fromCartesian(worldPosition);
+                                        
+                                        // //print the worldPosition (Cartesian3) and save it to Gun.
+                                        console.log(carto);
+                                        db.put(carto);
+                                        
+                                        },
+Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+
+// Fetch Gun data
+db.on(data => { 
+
+// Cesium constructor
+
+let bluebox = viewer.entities.add({
+			name: "Green box",
+			position: Cartesian3.fromDegrees(
+                                      Number(data.longitude),
+                                      Number(data.latitude),
+                                      Number(data.height)
+                                      ),
+			box: {
+				dimensions: new Cartesian3(400000.0, 400000.0, 400000.0),
+				material: Color.GREEN,
+			},
+
+});
+
+});
 
 });
 
@@ -278,7 +278,6 @@ console.log(carto); //Or print the worldPosition for the Cartesian3 coordinate.
 
 
 <main id="cesiumContainer">
-
 </main>
 
 
