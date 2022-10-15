@@ -236,16 +236,27 @@ onMount(async () => {
 var db = Gun(['http://localhost:8765/gun']).get('test')
 
 
-// fetch latitude, longitude and height on click. show in console.
+// fetch latitude, longitude on click
 let handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 handler.setInputAction(function(result) {
+
+                                        const cartesian = viewer.scene.pickPosition(result.position);
+      
+
+                                        const cartographic = Cesium.Cartographic.fromCartesian(
+                                          cartesian
+                                        );
                                         
-                                        let worldPosition = viewer.scene.pickPosition(result.position);
-                                        let carto = Cesium.Cartographic.fromCartesian(worldPosition);
+                                        const longitudeString = Cesium.Math.toDegrees(
+                                          cartographic.longitude
+                                        ).toFixed(7);
+
+                                        const latitudeString = Cesium.Math.toDegrees(
+                                          cartographic.latitude
+                                        ).toFixed(7);                                  
                                         
-                                        // //print the worldPosition (Cartesian3) and save it to Gun.
-                                        console.log(carto);
-                                        db.put(carto);
+                                        // Save coordinates to Gun                                        
+                                        db.put({longitude: longitudeString, latitude: latitudeString});
                                         
                                         },
 Cesium.ScreenSpaceEventType.LEFT_CLICK);
@@ -261,7 +272,7 @@ let bluebox = viewer.entities.add({
 			position: Cartesian3.fromDegrees(
                                       Number(data.longitude),
                                       Number(data.latitude),
-                                      Number(data.height)
+                                      0
                                       ),
 			box: {
 				dimensions: new Cartesian3(400000.0, 400000.0, 400000.0),
