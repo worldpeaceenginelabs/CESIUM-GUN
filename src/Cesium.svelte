@@ -243,17 +243,11 @@ handler.setInputAction(function(result) {
                                         const cartesian = viewer.scene.pickPosition(result.position);
       
 
-                                        const cartographic = Cesium.Cartographic.fromCartesian(
-                                          cartesian
-                                        );
+                                        const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
                                         
-                                        const longitudeString = Cesium.Math.toDegrees(
-                                          cartographic.longitude
-                                        ).toFixed(7);
+                                        const longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(7);
 
-                                        const latitudeString = Cesium.Math.toDegrees(
-                                          cartographic.latitude
-                                        ).toFixed(7);                                  
+                                        const latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(7);                                  
                                         
                                         // Save coordinates to Gun                                        
                                         db.put({longitude: longitudeString, latitude: latitudeString});
@@ -274,12 +268,8 @@ let bluebox = viewer.entities.add({
                                       Number(data.latitude),
                                       0
                                       ),
-			point: {
-              pixelSize : 10,
-              color : Cesium.Color.RED,
-              outlineColor : Cesium.Color.GREEN,
-              outlineWidth : 3
-			      },
+                                      
+			point: {pixelSize : 10, color : Cesium.Color.RED, outlineColor : Cesium.Color.GREEN, outlineWidth : 3},
 
 });
 
