@@ -10,4 +10,4 @@
 #### You need to run a Gun relay in order to sync clients!
 - Gun Desktop Relay https://github.com/worldpeaceenginelabs/ELECTRON-GUN (ready to run with Cesium-Gun)
 
-Run localhost (now localhost:8765) or with noip.com for DYNDNS (more in Electron-Gun readme)
+Run localhost (now localhost:8765) or with noip.com for DYNDNS (https://github.com/worldpeaceenginelabs/ELECTRON-GUN#make-your-desktop-gun-server-available-from-the-outside-centralized-way-for-development-fallback-or-scaling-eventually)
