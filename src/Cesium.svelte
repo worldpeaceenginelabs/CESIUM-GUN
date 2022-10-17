@@ -240,13 +240,13 @@ var db = Gun(['http://localhost:8765/gun']).get('test')
 let handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 handler.setInputAction(function(result) {
 
+                                        // pick position
                                         const cartesian = viewer.scene.pickPosition(result.position);
-      
-
+                                        // save Cartesian coordinates (x,y,z)
                                         const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
                                         
+                                        // convert from Cartesian to Degrees and shorten the numbers to 7 digits after comma
                                         const longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(7);
-
                                         const latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(7);                                  
                                         
                                         // Save coordinates to Gun                                        
